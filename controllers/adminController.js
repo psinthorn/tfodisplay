@@ -21,7 +21,6 @@ module.exports = {
                     res.render('admin/admin-login', {admin: admin});
                 })
         }
-
     },
 
     //end admin register
@@ -34,7 +33,7 @@ module.exports = {
     //Login Page
     login(req, res, next) {
         passport.authenticate('local', {
-            successRedirect: '/admin/services',
+            successRedirect: '/admin/display',
             failureRedirect: '/admin/login',
             failureFlash: true
         })(req, res, next); 

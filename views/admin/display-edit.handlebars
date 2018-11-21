@@ -1,0 +1,113 @@
+
+<div class="container">
+         <div class="row">
+
+        {{> _msg}}
+
+        <div class="col s12 m12 l12">
+            <h4>Edit Display Info</h4>
+            <div class="hr-1px"></div>
+
+            <div class="col s12 m12 l12">
+                <div class="card white darken-1">
+                    <div class="card-content gray-text">
+
+                        <form action="/admin/display/{{ display.id }}?_method=PUT" method="post">
+                            <input type="hidden" name="_method" value="PUT">
+
+                            
+                                <div class="row">
+                                    <div class="input-field col s12 m12 l12">
+
+                                        <input type="text" name="title" value="{{ display.title}}">
+                                        <label for="title">Title</label>
+
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="input-field col s12 m12 l12">
+                                
+                                        <input type="text" name="subtitle" value="{{ display.subtitle}}">
+                                        <label for="subtitle">Sub Title</label>
+                                
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="input-field col s12 m12 l12">
+
+                                        <textarea name="desc" id="desc" cols="30" rows="10">{{ display.desc }}</textarea>
+                                        <label for="desc">display Content</label>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="input-field col s12 m12 l12">
+                                
+                                        <input type="text" name="footer" value="{{ display.footer}}">
+                                        <label for="footer">Footer</label>
+                                
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="input-field col s12 m12 l12">
+                                
+                                        <input type="text" name="subfooter" value="{{ display.subfooter}}">
+                                        <label for="subfooter">Sub Footer</label>
+                                
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="input-field col s12 m12 l12">
+                                        <input type="text" name="manageBy" value="{{ display.manageBy }}">
+                                        <label for="manageBy">Manage By</label>
+
+                                    </div>
+                                </div>
+
+
+                            
+                            <div class="row">
+                                <div class="input-field col s12 m12 l12">
+                                    <select name="status" id="status">
+                                        {{#select display.status }}
+                                        <option value="public" >Public</option>
+                                        <option value="private">Private</option>
+                                        <option value="Unpublished">unpublished</option>
+                                        {{/select }}
+                                    </select>
+                                    <label for="status">Status</label>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                
+                                <input type="submit" value="Update" class="btn right">
+                            </div>
+                        </form>
+
+                        {{!-- <div class="row">
+                                {{> _display-image-upload }}
+                        </div> --}}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+
+        </div>
+
+
+
+
+    
+
+</div>
+   
+    

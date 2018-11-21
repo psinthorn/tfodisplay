@@ -15,16 +15,10 @@ module.exports = (app) => {
   app.get('/about', IndexController.about);  
   
 
-  //Product List
-  app.get('/products', IndexController.products);
-  app.get('/product-show/:id', IndexController.productShow);
-
   //Service list
   app.get('/services', IndexController.services );
   app.get('/service-show/:id', IndexController.serviceShow);
 
-  //transfers booking form
-  app.get('/service/book/:id', IndexController.bookService );
 
   //transfers booking form
   app.get('/term-policies', IndexController.termPolicy );

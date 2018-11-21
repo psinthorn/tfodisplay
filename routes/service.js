@@ -1,7 +1,6 @@
 
 const ServiceController = require('./../controllers/admin/serviceController');
 const ServiceGalleryController = require('./../controllers/admin/serviceGalleryController');
-const PriceSaleController = require('./../controllers/admin/priceController');
 const {ensureAuthenticated, ensureGuest} = require('./../helpers/auth');
 
 module.exports = (app) => {
@@ -61,11 +60,6 @@ module.exports = (app) => {
      app.post('/admin/service/exclude/:id', ensureAuthenticated, ServiceController.exclude);
      app.delete('/admin/service/exclude/:id', ensureAuthenticated, ServiceController.excludeDelete);
 
-
-    //Price Manage
-    app.put('/admin/service/pricesale/:id',ensureAuthenticated,PriceSaleController.priceServiceUpdate);
-
-    //fixed broken links
 
     
 

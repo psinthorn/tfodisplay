@@ -1,7 +1,6 @@
 
 const mongoose = require('mongoose');
 const flash = require('connect-flash');
-const Product = require('./../../models/Product');
 const fs = require('fs');
 
 module.exports = {

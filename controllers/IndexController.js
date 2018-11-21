@@ -2,12 +2,10 @@ const mongoose = require('mongoose');
 const Contact = require('../models/Contact');
 const About = require('../models/About');
 const Welcome = require('../models/Welcome');
-const ProductCategory = require('./../models/ProductCategory');
-const Product = require('../models/Product');
 const Intro = require('../models/Intro');
 const Service = require('./../models/Service');
-
 const Policy = require('./../models/Policy');
+const Display = require('./../models/DisplayText');
 
 
 module.exports = {
@@ -31,10 +29,10 @@ dashBoard(req, res){
 }, 
 
 index(req, res){
-    Welcome.findOne({})
-        .then( welcome => {
-            res.render('index/home', { welcome: welcome });
-        })  
+   Display.findOne({})
+    .then( display => {
+        res.render('index/display-text', { dispaly: display });   
+    })
 },
 
 
@@ -51,28 +49,6 @@ about(req, res){
             res.render('index/about', { about: about });
         })  
 },
-
-products(req, res){
-
-    Product.find({status: 'Public'}).sort({ order: 1})
-    .then( (products) => {
-            res.render('index/products', { products: products });          
-    });
-   
-},
-
-productShow(req, res){
-
-    const id = req.params.id;
-    
-        Product.findById({ _id: id })
-            .populate('subcontact')
-            .then( product => {
-                res.render('index/product-show', { product: product });   
-            }); 
-    },
-
-
 
  services(req, res) {
 
@@ -91,27 +67,8 @@ productShow(req, res){
             .then( service => {
                 res.render('index/service-show', { service: service });   
             }); 
-    },
+},
 
-
- bookService(req, res) {
-
-    const price = req.query.price;
-    const type = req.query.type;
-    const id = req.params.id;
-    const trFrom = req.query.from; 
-    const trTo = req.query.to;
-
-    const transfer = {
-       'from': req.query.from,
-       'to': req.query.to,
-       'price': req.query.price,
-       'type': req.query.type,
-    }
-    //res.send(trDetail);
-    res.render('index/book-transfer', { transfer: transfer });
-
- }, 
 
  termPolicy(req, res){
 

@@ -9,6 +9,10 @@
         crossorigin="anonymous">
         </script> --}}
 
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">       
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+
+
 
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
@@ -24,6 +28,7 @@
     <link rel="stylesheet" href="/css/tools.css">
      <link rel="stylesheet" href="/css/lightbox.min.css">   
      <link rel="stylesheet" href="/css/style.css">
+      <link rel="stylesheet" href="/css/display-text.css">
 
     
      <!-- Compiled and minified JavaScript -->
@@ -45,35 +50,54 @@
 </style>
 
 
-    <title>M.S.C.S (Thailand) - บริการ กำจัดปลวก</title>
+    <title>TFO TECH (Thailand) Co.,Ltd.</title>
 </head>
 
 <body>
-    <div class="container">
-    {{> _header_ads }}
-     {{> _nav2bar }}  
-    {{!--{{> _header }} --}}
-    
+    <div class="row">
+         <div class="container-fluid">
+   
+            {{!-- {{> _nav-right-hamburger }} --}}
+            {{!-- {{> _nav2bar }}   --}}
+            {{!--{{> _header }} --}}
+            
+            
+            {{!-- {{#if user}} {{> _add-btn}} {{else}} {{/if}} --}}
+            </div>
 
-    {{!-- {{#if user}} {{> _add-btn}} {{else}} {{/if}} --}}
+    </div>
+   <div class="row">
 
-    <main>
-        
-        <div class="container-fluid">
+         <div class="container-fluid">
+         <main>
+         
+        {{!-- <div class="container-fluid">
             {{> _msg-flash}}
        
-        </div>
+        </div> --}}
 
+        <div class="container-fluid">
              {{{body}}}
+        </div>
+            
         
-    </main>
-    <div class="container-fluid">
+        </main>
+
+    </div>
+   
+
+   </div>
+   
+    {{!-- <div class="row">
+        <div class="container-fluid">
         {{> _footer}}
 
-    </div>
+        </div>
+    
+    </div> --}}
     
 
-    </div>
+   
 
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="

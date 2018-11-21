@@ -7,7 +7,7 @@ const fs = require('fs');
 const axios = require('axios');
 const aws = require('aws-sdk');
 const paypal = require('paypal-rest-sdk');
-
+const cors = require('cors');
 
 
 //const multer = require('multer');
@@ -20,16 +20,13 @@ const upload = require('express-fileupload');
 const flash = require('connect-flash');
 
 //load models
+require('./models/DisplayText');
 require('./models/Welcome');
-require('./models/Category');
 require('./models/Contents');
 require('./models/UserAdmin');
 require('./models/Users');
 require('./models/Banner');
 require('./models/Slide');
-
-require('./models/ProductCategory');
-require('./models/Product');
 
 require('./models/Service');
 require('./models/Contact');
@@ -49,12 +46,12 @@ const index = require('./routes/index');
 const contact = require('./routes/contact');
 const about = require('./routes/about');
 const welcome = require('./routes/welcome');
-const product = require('./routes/product');
 const service = require('./routes/service');
-const productcategory = require('./routes/productCategory');
 const policy = require('./routes/policy');
+const display = require('./routes/display');
 
 const app = express();
+app.use(cors());
 
 
 //use sessions for tracking logins
@@ -89,8 +86,6 @@ mongoose.connect(keys.mongoURI, {
 })
 .then(() => console.log('MongoDB Connected'))
 .catch(err => console.log(err) );
-
-
 aws.config.region = 'eu-west-1';
 
 /*
@@ -100,11 +95,12 @@ const S3_BUCKET = process.env.S3_BUCKET;
 
 //Paypal Config
 paypal.configure({
-   
+    
+    //all of this info must store on env variable
     'mode': 'sandbox', //sandbox or live
     //Pornchai Transport and Tours
-    'client_id': 'AS7Mw57OYtE6DXs1c', //seaflyers
-    'client_secret': 'EF-cGaliGY6pQxHK' //seaflyers
+    'client_id': 'AS7Mw57OYtE6DXs1c', 
+    'client_secret': 'EF-cGaliGY6pQxHK' 
 
 });
 
@@ -170,12 +166,11 @@ banner(app);
 index(app);
 contact(app);
 about(app);
-product(app);
-productcategory(app);
 service(app);
 slide(app);
 welcome(app);
 policy(app);
+display(app);
 
 module.exports = app;
 
