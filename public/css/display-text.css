@@ -72,16 +72,17 @@ body {
   }
 
   .desc-text {
-    color: #01579b;
+    color: #ffffff;
     text-align: left;
     /* font-size: 90px; */
     font-weight: 900;
     padding: 20px;
+     background-image: linear-gradient(to right bottom, rgba(3, 176, 244, 0.4),rgba(79, 197, 247, 0.4) ) , url(./../images/tfo-006.png);
 
   }
 
   .display-text-footer {
-      padding: 20px;
+      padding: 0px;
       text-align: center;
   }
 

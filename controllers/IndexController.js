@@ -31,7 +31,8 @@ dashBoard(req, res){
 index(req, res){
    Display.findOne({})
     .then( display => {
-        res.render('index/display-text', { dispaly: display });   
+        res.render('index/display-text', { display: display });   
+        //res.send(display);
     })
 },
 
