@@ -31,6 +31,10 @@ html  {
 
   }
 
+  .welcome-text {
+    color: #01579b;
+  }
+
   .nav-wrapper  {
     font-size: 30px;
     font-size: 3.0rem;

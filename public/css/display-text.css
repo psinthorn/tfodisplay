@@ -62,3 +62,27 @@ body {
     letter-spacing: 10px;
     /* padding: 40px; */
 }
+
+  .welcome-text {
+    color: #01579b;
+    text-align: center;
+    font-size: 48px;
+    font-weight: 900;
+    padding: 20px;
+  }
+
+  .desc-text {
+    color: #01579b;
+    text-align: left;
+    /* font-size: 90px; */
+    font-weight: 900;
+    padding: 20px;
+
+  }
+
+  .display-text-footer {
+      padding: 20px;
+      text-align: center;
+  }
+
+
