@@ -7,6 +7,9 @@ module.exports = (app) => {
 
    //Welcome landing page
   app.get('/', IndexController.index);
+   app.get("/text2", IndexController.indexText);
+  app.get('/banner', IndexController.banner);
+ 
 
   //Company Profile Page
   app.get('/company-profile', IndexController.companyProfile);  
@@ -29,7 +32,5 @@ module.exports = (app) => {
 
   //Maps
   app.get('/maps', IndexController.maps);
-  app.get('/geocode/:id', IndexController.geocode);
-  app.get('/geocode', IndexController.geocode);
 
 }

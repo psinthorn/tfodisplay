@@ -33,7 +33,7 @@ module.exports = {
 
         const imgUrl = req.files.imgUrl;
         const imgUrlName = Date.now() + '-' + imgUrl.name;
-        const imagesUploads = './public/images/service/';
+        const imagesUploads = './public/images/banner/';
         imgUrl.mv(imagesUploads + imgUrlName, (err) => {
             if(err) throw err;
         });
@@ -106,7 +106,7 @@ module.exports = {
 
         const imgUrl = req.files.imgUrl;
         const imgUrlName = Date.now() + '-' + imgUrl.name;
-        const imagesUploads = './public/images/service/';
+        const imagesUploads = './public/images/banner/';
         imgUrl.mv(imagesUploads + imgUrlName, (err) => {
             if(err) throw err;
         });
@@ -129,7 +129,7 @@ module.exports = {
         //res.send(imgUrl.name);
 
         const imgUrlName = Date.now() + '-' + imgUrl.name;
-        const imagesUploads = './public/images/service/';
+        const imagesUploads = './public/images/banner/';
         imgUrl.mv(imagesUploads + imgUrlName, (err) => {
             if(err) throw err;
         });
@@ -163,7 +163,7 @@ module.exports = {
 
         const imgUrl = req.files.serviceBannerImgUrl;
         const imgUrlName = Date.now() + '-' + imgUrl.name;
-        const imagesUploads = './public/images/service/banner/';
+        const imagesUploads = './public/images/banner/';
         imgUrl.mv(imagesUploads + imgUrlName, (err) => {
             if(err) throw err;
         });
@@ -185,7 +185,7 @@ module.exports = {
         //res.send(imgUrl.name);
 
         const imgUrlName = Date.now() + '-' + imgUrl.name;
-        const imagesUploads = './public/images/service/banner/';
+        const imagesUploads = './public/images/banner/';
         imgUrl.mv(imagesUploads + imgUrlName, (err) => {
             if(err) throw err;
         });
