@@ -1,72 +1,43 @@
+<div class="contain-fluid">
+    <div class="display-text">
+        <div class="row">
+            <div>
+                <img src="./images/logo-red.png" alt="Logo" class="logo">
+            </div>
+        </div>
 
-    <div class="contain-fluid">
-        <div class="display-text">
-            <div class="row">
-                <div>
-                    <img src="./images/logo-red.png" alt="Logo" class="logo">
+        <div class="row">
+            <div class="container-fluid">
+                <div class="welcome-text card">
+                    <p>{{ display.title }}</p>
+                    <p>{{ display.subtitle }}</p>
+
                 </div>
             </div>
-            
-            <div class="row">
-                <div class="container-fluid">
-                    <div class="welcome-text card">
-                        <p>{{ display.title }}</p>
-                       <p>{{ display.subtitle }}</p>
-                      
+
+            <div class="container-fluid center">
+                <div class="desc-text card ">
+                    <div style="padding-left: 50px">
+                        <h3>
+                            {{{ display.desc}}}
+                        </h3>
                     </div>
                 </div>
+            </div>
 
-                 <div class="container-fluid center">
-                   <div class="desc-text card">
-                       <p style="text-align: left; height: 50vh"></p>
-                        <h3>
-                             {{{ display.desc}}}
-                        </h3>
-                       
-
-                        {{!-- <h3>
-                            <span>1. 設備事業部部長：　宮崎 様</span>
-                        </h3>
-                        <h3>
-                            <span> 2. 本社工場工場長：　森 様</span>
-                        </h3>
-                        <h3>
-                            <span>3. 静岡工場工場長：　須部 様</span>
-                        </h3>
-                        <h3>
-                            <span>4. 本社工場製作課主任：　山本 様</span>
-                        </h3>
-                        <h3>
-                            <span> 5. 静岡工場生産技術サブリーダー：　西本 様</span>
-                        </h3>
-                        <h3>
-                            <span>6. ＮＴＰＴ　金原様</span>
-                        </h3>
-                        <h3>
-                            <span>7. 與那覇部長様</span>
-                        </h3>
-                        <h3>
-                            <span>8. 石原ＡＤ様</span>
-                        </h3> --}}
-                       
-
-                   </div>
-                       
-
-                 </div>
-
-                <div class="container-fluid">
-                    <div class="row"> 
-                        <div class="display-text-footer center">
-                            <div class="col s6 m6 l6">
-                                <div class="col s12 m12 l12 btn-large disabled">
-                                    <h4>Time:</h4>
-                                </div>
-                                <div class="input-field col s12">
-                                    <h4>
-                                        <input placeholder="Placeholder" id="meeting_rooms" type="text" class="validate" value="{{ display.footer}}">
-                                    </h4> 
-                                </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="display-text-footer center">
+                        <div class="col s6 m6 l6">
+                            <div class="col s12 m12 l12 btn-large disabled">
+                                <h4>Time:</h4>
+                            </div>
+                            <div class="input-field col s12">
+                                <h4>
+                                    <input placeholder="Placeholder" id="meeting_rooms" type="text" class="validate"
+                                        value="{{ display.footer}}">
+                                </h4>
+                            </div>
                         </div>
                         <div class="col s6 m6 l6">
                             <div class="col s12 m12 l12 btn-large disabled">
@@ -75,22 +46,20 @@
 
                             <div class="input-field col s12">
                                 <h4>
-                                    <input placeholder="Placeholder" id="meeting_rooms" type="text" class="validate" value="{{ display.subfooter}}">
-                                </h4>                      
+                                    <input placeholder="Placeholder" id="meeting_rooms" type="text" class="validate"
+                                        value="{{ display.subfooter}}">
+                                </h4>
                             </div>
                         </div>
-                            
-                      </div>                  
+
                     </div>
-                </div>    
-                    
                 </div>
-            
             </div>
 
         </div>
-                   
+
     </div>
 
-         
-       
+</div>
+
+</div>
