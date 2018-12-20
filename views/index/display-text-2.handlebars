@@ -8,7 +8,7 @@
 
         <div class="row">
             <div class="container-fluid">
-                <div class="welcome-text card">
+                <div class="welcome-text card" style="margin-left: 5px;margin-right: 5px;">
                     <p>{{ display.title }}</p>
                     <p>{{ display.subtitle }}</p>
 
@@ -16,11 +16,22 @@
             </div>
 
             <div class="container-fluid center">
-                <div class="desc-text card ">
-                    <div style="padding-left: 50px">
-                        <h3>
-                            {{{ display.desc}}}
-                        </h3>
+                <div class="desc-text card " style="margin-left: 5px;margin-right: 5px;">
+
+                    <div class="row">
+                        <div class="col s2 m2 l2">
+
+                        </div>
+                        <div class="col s8 m8 l8">
+                            <h3>
+                                {{{ display.desc}}}
+                            </h3>
+                        </div>
+
+                        <div class="col s2 m2 l2">
+
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -29,36 +40,43 @@
                 <div class="row">
                     <div class="display-text-footer center">
                         <div class="col s6 m6 l6">
-                            <div class="col s12 m12 l12 btn-large disabled">
-                                <h4>Time:</h4>
-                            </div>
-                            <div class="input-field col s12">
-                                <h4>
-                                    <input placeholder="Placeholder" id="meeting_rooms" type="text" class="validate"
-                                        value="{{ display.footer}}">
-                                </h4>
-                            </div>
-                        </div>
-                        <div class="col s6 m6 l6">
-                            <div class="col s12 m12 l12 btn-large disabled">
-                                <h4>Meeting Rooms:</h4>
+                            <div class="col s12 m12 l12 card center">
+                                <h3>Time:</h3>
+                                <hr>
+                                <div class="input-field col s12 m12 l12 center">
+                                    <h2>
+                                        {{ display.footer}}
+                                    </h2>
+                                </div>
                             </div>
 
-                            <div class="input-field col s12">
-                                <h4>
-                                    <input placeholder="Placeholder" id="meeting_rooms" type="text" class="validate"
-                                        value="{{ display.subfooter}}">
-                                </h4>
-                            </div>
+
+
                         </div>
 
                     </div>
+                    <div class="col s6 m6 l6">
+                        <div class="col s12 m12 l12 card center">
+                            <h3>Meeting Rooms:</h3>
+                            <hr>
+                            <div class="input-field col s12 center">
+                                <h2>
+                                    {{ display.subfooter}}
+                                </h2>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
                 </div>
             </div>
-
         </div>
 
     </div>
+
+</div>
 
 </div>
 
