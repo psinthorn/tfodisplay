@@ -1,194 +1,199 @@
- <!-- Content Managment Menu Dropdown Structure -->
-        <ul id="product_dropdown" class="dropdown-content">
-           
-            <li>
-                    <a href="/admin/product-category">
-                        <i class="material-icons">dehaze</i>หมวดหมู่สินค้า</a>
-            </li>
+<!-- Content Managment Menu Dropdown Structure -->
+<ul id="product_dropdown" class="dropdown-content">
 
-             <li>
-                    <a href="/admin/products">
-                        <i class="material-icons">loyalty</i>สินค้า</a>
-            </li>
+    {{!-- <li>
+        <a href="/admin/product-category">
+            <i class="material-icons">dehaze</i>หมวดหมู่สินค้า</a>
+    </li> --}}
 
-
-            <li>
-                    <a href="/geocode">
-                        <i class="material-icons">edit_location</i>Geo-Location Finder</a>
-            </li>
-
-        </ul>
+    {{!-- <li>
+        <a href="/admin/products">
+            <i class="material-icons">loyalty</i>สินค้า</a>
+    </li> --}}
 
 
-  <!-- Content Managment Menu Dropdown Structure -->
-        <ul id="services_dropdown" class="dropdown-content">
-           
-                <li>
-                    <a href="/admin/service-category">
-                        <i class="material-icons">dehaze</i>หมวดหมู่บริการ</a>
-            </li>
+    {{!-- <li>
+        <a href="/geocode">
+            <i class="material-icons">edit_location</i>Geo-Location Finder</a>
+    </li> --}}
 
-             <li>
-                    <a href="/admin/services">
-                        <i class="material-icons">loyalty</i>บริการ</a>
-            </li>
-
-        </ul>      
+</ul>
 
 
- <!-- Side-Nav Menu -->
-            <ul class="side-nav" id="main-menu">
+<!-- Content Managment Menu Dropdown Structure -->
+<ul id="display_dropdown" class="dropdown-content">
 
-                {{#if user}}
-                
-                 <li>
-                    <a href="/">
-                        <i class="material-icons">apps</i>
-                        <div class="logo">
-                                 {{!-- <img src="/images/logo-btp.png" alt="apdl.ca"> --}}
-                              <b>M.S.C.S</b>   
-                        </div>
-                               
-                       
-                    </a>  
-                </li>
+    {{!-- <li>
+        <a href="/admin/service-category">
+            <i class="material-icons">dehaze</i>หมวดหมู่บริการ</a>
+    </li> --}}
 
+    <li>
+        <a href="/">
+            <i class="material-icons">loyalty</i>Display#1</a>
+    </li>
+    <li>
+        <a href="http://localhost:8082/display/1">
+            <i class="material-icons">loyalty</i>Display#2</a>
+    </li>
 
-                <li class="divider"></li>
-
-                <li>
-                    
-                    <a class="dropdown-button left-align" href="#!" data-activates="content_dropdown"><i class="material-icons right">arrow_drop_down</i>จัดการเนื้อหา
-                        
-                    </a>
-                </li>
-
-                
-
-                 <li class="divider"></li>
-
-                 <li>
-                    <a href="/admin/welcomes">
-                        <i class="material-icons">subject</i>หน้าแรก</a>
-            </li>
-
-                  <li class="divider"></li>
-
-                 <li>
-                    <a href="/admin/about">
-                        <i class="material-icons">fingerprint</i>เกี่ยวกับเรา</a>
-            </li>
-
-             <li class="divider"></li>
-
-            <li>
-                    <a href="/admin/contact">
-                        <i class="material-icons">perm_phone_msg</i>ข้อมูลติดต่อ</a>
-            </li>
+</ul>
 
 
-                 <li class="divider"></li>
+<!-- Side-Nav Menu -->
+<ul class="side-nav" id="main-menu">
 
-                 <li>
-                    
-                    <a class="dropdown-button left-align" href="#!" data-activates="product_dropdown"> <i class="material-icons right">arrow_drop_down</i>จัดการสินค้า
-                        
-                    </a>
-                </li>
+    {{#if user}}
 
-                <li class="divider"></li>
-
-                 <li>
-                    
-                    <a class="dropdown-button left-align" href="#!" data-activates="services_dropdown"> <i class="material-icons right">arrow_drop_down</i>จัดการบริการ
-                        
-                    </a>
-                </li>
-
-                
-            <li class="divider"></li>
-                 <li>
-                    <a href="/admin/logout">
-                        <i class="material-icons">exit_to_app</i>ออกจากระบบ</a>
-                </li>
-
-               
-
-                {{else}}
-
-                <li>
-                    <a href="/">
-                        <i class="material-icons">apps</i>
-                        <div class="logo">
-                        
-                                 TFO Tech (Thailand) Co.,Ltd.
-                        </div>
-                               
-                       
-                    </a>  
-                </li>
-
-                <li>
-                    <a href="/">
-                        <i class="material-icons">flag</i>
-                        </i>หน้าแรก</a>
-                </li>
+    <li>
+        <a href="/">
+            <i class="material-icons">apps</i>
+            <div class="logo">
+                {{!-- <img src="/images/logo-btp.png" alt="apdl.ca"> --}}
+                <b>TFOTECH</b>
+            </div>
 
 
-                
-
-                 <li class="divider"></li>
-
-               
-
-                <li>
-                    <a href="/products">
-                        <i class="material-icons">loyalty</i>สินค้า</a>
-                </li>
-
-                 <li class="divider"></li>
+        </a>
+    </li>
 
 
-                 <li>
-                    <a href="/services">
-                        <i class="material-icons">airport_shuttle</i>บริการ</a>
-            </li>
+    <li class="divider"></li>
 
-                
+    <li>
 
-                <li class="divider"></li>
+        <a class="dropdown-button left-align" href="#!" data-activates="content_dropdown"><i class="material-icons right">arrow_drop_down</i>จัดการเนื้อหา
 
-                <li>
-                    <a href="/about">
-                        <i class="material-icons">fingerprint</i>
-                        </i>เกี่ยวกับเรา</a>
-                </li>
-
-
-                 <li class="divider"></li>
-
-                 <li>
-                    <a href="/contact-us">
-                        <i class="material-icons">favorite</i>ติดต่อเรา</a>
-                </li>
-
-                 <li class="divider"></li>
-                
-                    <li>
-                    <a href="/admin/login">
-                        <i class="material-icons">exit_to_app</i>เข้าจัดการระบบ</a>
-                    </li>
-
-                <li class="divider"></li>
-
-               
+        </a>
+    </li>
 
 
 
-                {{/if}}
-               
+    <li class="divider"></li>
+
+    <li>
+        <a href="/admin/welcomes">
+            <i class="material-icons">subject</i>Home</a>
+    </li>
 
 
 
-             
-            </ul>
+    {{!-- <li>
+        <a href="/admin/about">
+            <i class="material-icons">fingerprint</i>เกี่ยวกับเรา</a>
+    </li> --}}
+
+    {{!-- <li class="divider"></li>
+
+    <li>
+        <a href="/admin/contact">
+            <i class="material-icons">perm_phone_msg</i>ข้อมูลติดต่อ</a>
+    </li> --}}
+
+
+    {{!-- <li class="divider"></li>
+
+    <li>
+
+        <a class="dropdown-button left-align" href="#!" data-activates="product_dropdown"> <i class="material-icons right">arrow_drop_down</i>จัดการสินค้า
+
+        </a>
+    </li> --}}
+
+    <li class="divider"></li>
+
+    <li>
+
+        <a class="dropdown-button left-align" href="#!" data-activates="display_dropdown"> <i class="material-icons right">arrow_drop_down</i>Select
+            Display
+
+        </a>
+    </li>
+
+
+    <li class="divider"></li>
+    <li>
+        <a href="/admin/logout">
+            <i class="material-icons">exit_to_app</i>Sign Out</a>
+    </li>
+
+
+
+    {{else}}
+
+    <li>
+        <a href="/">
+            <i class="material-icons">apps</i>
+            <div class="logo">
+
+                TFO Tech (Thailand) Co.,Ltd.
+            </div>
+
+
+        </a>
+    </li>
+
+    <li>
+        <a href="/">
+            <i class="material-icons">flag</i>
+            </i>Home</a>
+    </li>
+
+
+
+
+    {{!-- <li class="divider"></li> --}}
+
+
+
+    {{!-- <li>
+        <a href="/products">
+            <i class="material-icons">loyalty</i>สินค้า</a>
+    </li>
+
+    <li class="divider"></li> --}}
+
+
+    {{!-- <li>
+        <a href="/services">
+            <i class="material-icons">airport_shuttle</i>บริการ</a>
+    </li> --}}
+
+
+
+    {{!-- <li class="divider"></li>
+
+    <li>
+        <a href="/about">
+            <i class="material-icons">fingerprint</i>
+            </i>เกี่ยวกับเรา</a>
+    </li>
+
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="/contact-us">
+            <i class="material-icons">favorite</i>ติดต่อเรา</a>
+    </li>
+
+    <li class="divider"></li> --}}
+
+    <li>
+        <a href="/admin/login">
+            <i class="material-icons">exit_to_app</i>Sign In</a>
+    </li>
+
+    <li class="divider"></li>
+
+
+
+
+
+    {{/if}}
+
+
+
+
+
+</ul>

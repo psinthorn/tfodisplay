@@ -1,12 +1,11 @@
-const mongoose = require('mongoose');
-const Contact = require('../models/Contact');
-const About = require('../models/About');
-const Welcome = require('../models/Welcome');
-const Intro = require('../models/Intro');
-const Service = require('./../models/Service');
-const Policy = require('./../models/Policy');
-const Display = require('./../models/DisplayText');
-
+const mongoose = require("mongoose");
+const Contact = require("../models/Contact");
+const About = require("../models/About");
+const Welcome = require("../models/Welcome");
+const Intro = require("../models/Intro");
+const Service = require("./../models/Service");
+const Policy = require("./../models/Policy");
+const Display = require("./../models/DisplayText");
 
 module.exports = {
   dashBoard(req, res) {
@@ -30,6 +29,12 @@ module.exports = {
   indexText(req, res) {
     Display.findOne({}).then(display => {
       res.render("index/display-text-2", { display: display });
+    });
+  },
+
+  display3(req, res) {
+    Display.findOne({}).then(display => {
+      res.render("index/display-text-3", { display: display });
     });
   },
 
