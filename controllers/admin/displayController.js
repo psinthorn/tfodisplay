@@ -1,144 +1,119 @@
-
-const mongoose = require('mongoose');
-const Display = require('../../models/DisplayText');
-const fs = require('fs');
-
+const mongoose = require("mongoose");
+const Display = require("../../models/DisplayText");
+const fs = require("fs");
 
 module.exports = {
+  //Get all available list of apartments
+  getAll(req, res) {
+    Display.findOne({}).then(display => {
+      res.render("admin/display-list", { display: display });
+    });
+  },
 
-    //Get all available list of apartments
-    getAll(req, res) {
-        Display.findOne({})
-            .then(display => {
-                res.render('admin/display-list', { display: display });
+  //Create form
 
-            });
+  addForm(req, res) {
+    Display.findOne({}).then(display => {
+      res.render("admin/display-add");
+    });
+  },
 
-    },
+  //Create new display
+  create(req, res) {
+    const displayProps = req.body;
 
+    //console.log(displayProps);
 
-    //Create form 
+    Display.create(displayProps)
+    .then(() => {
+      res.redirect("/admin/display");
+      //res.send(display);
+    });
+  },
 
-    addForm(req, res) {
+  //Edit form display
+  editForm(req, res) {
+    const id = req.params.id;
+    //console.log(id);
+    Display.findById({ _id: id }).then(display => {
+      res.render("admin/display-edit", { display: display });
+    });
+  },
 
-        Display.findOne({})
-            .then((display) => {
-                res.render('admin/display-add');
-            });
-    },
+  //Edit form display
+  editUpdate(req, res) {
+    const displayProps = req.body;
+    const id = req.params.id;
 
-    //Create new display
-    create(req, res) {
+    Display.findByIdAndUpdate({ _id: id }, displayProps)
+      .then(() => Display.find({ _id: id }))
+      .then(() => {
+        req.flash("success_msg", "Update completed.");
+        res.redirect("/admin/display");
+      });
+  },
 
-        const displayProps = req.body;
-        
-        console.log(displayProps);
+  //Delete display
+  delete(req, res) {
+    const id = req.params.id;
 
-        Display.create(displayProps)
-            
-            .then( () => {
-                res.redirect('/admin/display');
-                //res.send(display);
-            });
-    },
+    Display.findByIdAndRemove({ _id: id })
+      .then(() => Display.find({}))
+      .then(display => {
+        res.render("admin/displays-list", { display: display });
+      });
+  },
 
-    //Edit form display
-    editForm(req, res) {
+  //upload image form
+  image(req, res) {
+    res.render("admin/image-upload-form");
+  },
 
-        const id = req.params.id;
-        //console.log(id);
-        Display.findById({ _id: id })
-            .then(display => {
-                res.render('admin/display-edit', { display: display });
-            })
-    },
+  //image upload process
+  imageUplaod(req, res) {
+    const id = req.params.id;
 
-    //Edit form display
-    editUpdate(req, res) {
-        const displayProps = req.body;
-        const id = req.params.id;
+    const imgUrl = req.files.imgUrl;
+    const imgUrlName = Date.now() + "-" + imgUrl.name;
+    const imagesUploads = "./public/images/";
+    imgUrl.mv(imagesUploads + imgUrlName, err => {
+      if (err) throw err;
+    });
 
-        Display.findByIdAndUpdate({ _id: id }, displayProps)
-            .then(() => Display.find({ _id: id }))
-            .then(() => {
-                req.flash('success_msg', 'Update completed.');
-                res.redirect('/admin/display');
-            })
-    },
+    let displayProps = {
+      imgUrl: imgUrlName
+    };
 
-    //Delete display 
-    delete(req, res) {
+    Display.findByIdAndUpdate({ _id: id }, displayProps).then(display => {
+      res.render("/admin/display", { display: display });
+    });
+  },
 
-        const id = req.params.id;
+  //Image Update
 
-        Display.findByIdAndRemove({ _id: id })
-            .then(() => Display.find({}))
-            .then((display) => {
-                res.render('admin/displays-list', { display: display });
-            })
-    },
+  imageUpdate(req, res) {
+    const id = req.params.id;
+    const imgUrl = req.files.imgUrl;
 
+    //res.send(imgUrl.name);
+    const imgUrlName = "display-" + Date.now() + "-" + imgUrl.name;
+    const imagesUploads = "./public/images/";
+    imgUrl.mv(imagesUploads + imgUrlName, err => {
+      if (err) throw err;
+    });
 
-    //upload image form
-    image(req, res) {
-        res.render('admin/image-upload-form');
-    },
+    //res.send(imgUrlName);
+    const delImage = imagesUploads + req.body.oldImgUrl;
+    const newImg = {
+      imgUrl: imgUrlName
+    };
 
-
-    //image upload process
-    imageUplaod(req, res) {
-
-        const id = req.params.id;
-
-        const imgUrl = req.files.imgUrl;
-        const imgUrlName = Date.now() + '-' + imgUrl.name;
-        const imagesUploads = './public/images/';
-        imgUrl.mv(imagesUploads + imgUrlName, (err) => {
-            if (err) throw err;
+    fs.unlink(delImage, err => {
+      Display.findByIdAndUpdate({ _id: id }, newImg)
+        .then(() => Display.findById({ _id: id }))
+        .then(display => {
+          res.render("admin/display-edit", { display: display });
         });
-
-        let displayProps = ({
-            imgUrl: imgUrlName
-        })
-
-
-        Display.findByIdAndUpdate({ _id: id }, displayProps)
-            .then(display => {
-                res.render('/admin/display', { display: display });
-            });
-
-    },
-
-
-    //Image Update
-
-    imageUpdate(req, res) {
-
-        const id = req.params.id;
-        const imgUrl = req.files.imgUrl;
-        
-
-        //res.send(imgUrl.name);
-        const imgUrlName = 'display-' + Date.now() + '-' + imgUrl.name;
-        const imagesUploads = './public/images/';
-        imgUrl.mv(imagesUploads + imgUrlName, (err) => {
-            if(err) throw err;
-        });
-
-        //res.send(imgUrlName);
-        const delImage = imagesUploads + req.body.oldImgUrl;
-        const newImg = ({
-            imgUrl: imgUrlName
-        })
-
-        fs.unlink(delImage, (err) => {
-
-            Display.findByIdAndUpdate({ _id: id}, newImg)
-            .then(() => Display.findById({ _id: id }))
-            .then( display => {
-                res.render('admin/display-edit', { display: display });
-            });
-
-        })
-    },
-}
+    });
+  }
+};

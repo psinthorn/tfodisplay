@@ -1,8 +1,6 @@
-
-
 <div class="container">
 
-     <div class="row">
+    <div class="row">
 
         {{> _msg}}
 
@@ -12,7 +10,7 @@
 
             <div class="col s12 m12 l12">
                 <div class="card white darken-1">
-                    <div class="card-content gray-text" >
+                    <div class="card-content gray-text">
 
                         <form action="/admin/display" method="post">
 
@@ -25,7 +23,7 @@
                                 </div>
                             </div>
 
-                             <div class="row">
+                            <div class="row">
                                 <div class="input-field col s12 m12 l12">
 
                                     <textarea name="desc" id="desc" cols="30" rows="10"></textarea>
@@ -33,21 +31,30 @@
                                 </div>
                             </div>
 
-                             <div class="row">
-                                    <div class="input-field col s12 m12 l12">
-                                        <input type="text" name="manageBy">
-                                        <label for="manageBy">Manage By</label>
+                            <div class="row">
+                                <div class="input-field col s12 m12 l12">
 
-                                    </div>
+                                    <textarea name="desc_sub" id="desc_sub" cols="30" rows="10"></textarea>
+                                    {{!-- <label for="desc">Contact Content</label> --}}
                                 </div>
+                            </div>
 
 
-                             {{!-- <div class="row">
+                            <div class="row">
+                                <div class="input-field col s12 m12 l12">
+                                    <input type="text" name="manageBy">
+                                    <label for="manageBy">Manage By</label>
+
+                                </div>
+                            </div>
+
+
+                            {{!-- <div class="row">
                                 {{> _display-image-upload }}
                             </div> --}}
 
 
-                            
+
 
                             <div class="row">
                                 <div class="input-field col s12 m12 l12">
@@ -64,7 +71,7 @@
                                 <input type="submit" value="Add" class="btn right">
                             </div>
                         </form>
-                        
+
                     </div>
                 </div>
             </div>
@@ -73,13 +80,11 @@
 
 
 
-            
+
+    </div>
+
+
+
+
+
 </div>
-
-
-
-    
-
-</div>
-
-   
