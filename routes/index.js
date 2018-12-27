@@ -6,6 +6,7 @@ module.exports = app => {
   //Welcome landing page
   app.get("/", IndexController.index);
   app.get("/display/1", IndexController.indexText);
+  app.get("/display/3", IndexController.display3);
   app.get("/banner", IndexController.banner);
 
   //Company Profile Page
