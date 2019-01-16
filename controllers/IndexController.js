@@ -38,6 +38,12 @@ module.exports = {
     });
   },
 
+  display4(req, res) {
+    Display.findOne({}).then(display => {
+      res.render("index/display-text-4", { display: display });
+    });
+  },
+
   banner(req, res) {
     Service.find({})
       .sort({ order: 1 })
