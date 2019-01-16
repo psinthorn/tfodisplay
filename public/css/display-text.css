@@ -3,87 +3,122 @@
 #4fc3f7 light-blue lighten-2 */
 
 * {
-    margin: 0;
-    padding: 0;
-    font-family: "Lato", sans-serif;
-    /* height: 100vh; */
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+  /* height: 100vh; */
 }
 
 body {
-    font-family: "Lato", sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.7;
-    color: #777;
-   
-} 
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #777;
+}
 
 .main-display {
-    background-image: linear-gradient(to right bottom, rgba(3, 176, 244, 0.4),rgba(79, 197, 247, 0.4) ) , url(./../images/tfo-006.png);
-    background-position: top;
-    position: relative;
-    height: 100vh;
+  /* background-image: linear-gradient(
+      to right bottom,
+      rgba(3, 176, 244, 0.4),
+      rgba(79, 197, 247, 0.4)
+    ),
+    url(./../images/tfo-006.png); */
+
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(1, 80, 155, 1),
+    rgba(0, 225, 255, 0.2)
+  );
+  background-position: top;
+  position: relative;
+  height: 70vh;
+  color: white;
 }
 
 .logo-box {
-    position: absolute;
-    top: 40px;
-    left: 40px;
+  position: absolute;
+  top: 40px;
+  left: 40px;
 }
 
 .logo {
-    height: 35px;
+  height: 35px;
 }
 
 .text-box {
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-70%, -50%);
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-70%, -50%);
 }
 
 .header-primary {
-    color: #fff;
-    text-transform: uppercase;
+  color: #fff;
+  text-transform: uppercase;
 }
 
 .header-primary-main {
-    display: block;
-    font-size: 60px;
-    font-weight: 400;
-    letter-spacing: 15px;
-    /* padding: 40px; */
+  display: block;
+  font-size: 60px;
+  font-weight: 400;
+  letter-spacing: 15px;
+  /* padding: 40px; */
 }
 
 .header-primary-sub {
-    display: block;
-    font-size: 20px;
-    font-weight: 700;
-    letter-spacing: 10px;
-    /* padding: 40px; */
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 10px;
+  /* padding: 40px; */
 }
 
-  .welcome-text {
-    color: #01579b;
-    text-align: center;
-    font-size: 48px;
-    font-weight: 900;
-    padding: 20px;
-  }
+.welcome-text {
+  color: rgb(1, 87, 155);
+  text-align: center;
+  font-size: 48px;
+  font-weight: 900;
+  padding: 20px;
+  height: 25vh;
+}
 
-  .desc-text {
-    color: #ffffff;
-    text-align: left;
-    /* font-size: 90px; */
-    font-weight: 900;
-    padding: 20px;
-     background-image: linear-gradient(to right bottom, rgba(3, 176, 244, 0.4),rgba(79, 197, 247, 0.4) ) , url(./../images/tfo-006.png);
+.desc-text {
+  color: #ffffff;
+  text-align: left;
+  /* font-size: 90px; */
+  font-weight: 900;
+  padding: 20px;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(3, 176, 244, 0.4),
+      rgba(79, 197, 247, 0.4)
+    ),
+    url(./../images/tfo-006.png);
+}
 
-  }
+.display-text-footer {
+  padding: 0px;
+  text-align: center;
+  height: 10vh;
+}
 
-  .display-text-footer {
-      padding: 0px;
-      text-align: center;
-  }
+.display-text-3-bg {
+  background-color: #01579b;
+  color: whitesmoke;
+  height: 65vh;
+}
 
+.display-text-body {
+  background-color: #01579b;
+  color: whitesmoke;
+}
 
+.footer-text-title {
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(1, 80, 155, 1),
+    rgba(0, 225, 255, 0.3)
+  );
+  color: whitesmoke;
+}
